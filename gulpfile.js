@@ -12,8 +12,14 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const runSequence = require('run-sequence');
 const path = require('path');
+var replace = require('gulp-replace');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+// При вызове NODE_ENV=ghpages gulp dev при сборке, 
+// пути изображений заменяться на нужные для Github pages
+// после этого пушим проект в ветку gh-pages
+// затем переключаем на мастер и там собираем через gulp dev и пушим с норм путями
+const isGHPages = process.env.NODE_ENV == 'ghpages';
 
 // Start browserSync server
 gulp.task('serve', function() {
@@ -32,6 +38,7 @@ gulp.task('styles', function() {
       cascade: false
     }))
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
+    .pipe(gulpIf(isGHPages, replace('/img', '/multiStepsForm/public/img')))
     .pipe(gulp.dest('public/css'));
 });
 
