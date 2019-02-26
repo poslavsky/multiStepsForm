@@ -12,8 +12,10 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const runSequence = require('run-sequence');
 const path = require('path');
+var replace = require('gulp-replace');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isGHPages = process.env.NODE_ENV == 'ghpages';
 
 // Start browserSync server
 gulp.task('serve', function() {
@@ -32,6 +34,7 @@ gulp.task('styles', function() {
       cascade: false
     }))
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
+    .pipe(gulpIf(isGHPages, replace('/img', '/multiStepsForm/hgpages/img')))
     .pipe(gulp.dest('public/css'));
 });
 
