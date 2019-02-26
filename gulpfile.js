@@ -34,7 +34,7 @@ gulp.task('styles', function() {
       cascade: false
     }))
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
-    .pipe(gulpIf(isGHPages, replace('/img', '/multiStepsForm/hgpages/img')))
+    .pipe(gulpIf(isGHPages, replace('/img', '/multiStepsForm/public/img')))
     .pipe(gulp.dest('public/css'));
 });
 

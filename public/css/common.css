@@ -84,7 +84,7 @@ body {
   opacity: 0;
 }
 .main--second .section-promo__item--second {
-  background: #D47C01 url(/multiStepsForm/hgpages/img/promo2.jpg) no-repeat;
+  background: #D47C01 url(/multiStepsForm/public/img/promo2.jpg) no-repeat;
   visibility: visible;
   opacity: 1;
 }
@@ -143,7 +143,7 @@ body {
   opacity: 0;
 }
 .main--third .section-promo__item--third {
-  background: #E93A29 url(/multiStepsForm/hgpages/img/promo3.jpg) no-repeat;
+  background: #E93A29 url(/multiStepsForm/public/img/promo3.jpg) no-repeat;
   visibility: visible;
   opacity: 1;
 }
@@ -211,7 +211,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background: #FF6E20 url(/multiStepsForm/hgpages/img/promo1.jpg) no-repeat;
+  background: #FF6E20 url(/multiStepsForm/public/img/promo1.jpg) no-repeat;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
@@ -278,7 +278,7 @@ body {
   content: '';
   width: 200px;
   height: 400px;
-  background: url(/multiStepsForm/hgpages/img/kotik1.png) no-repeat center center;
+  background: url(/multiStepsForm/public/img/kotik1.png) no-repeat center center;
   top: 0;
   right: 0;
   -webkit-transform: translateX(1148px);
@@ -299,7 +299,7 @@ body {
   content: '';
   width: 200px;
   height: 400px;
-  background: url(/multiStepsForm/hgpages/img/kotik2.png) no-repeat center center;
+  background: url(/multiStepsForm/public/img/kotik2.png) no-repeat center center;
   top: 200px;
   right: 0;
   -webkit-transform: translateX(1148px);
@@ -474,7 +474,7 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: url(/multiStepsForm/hgpages/img/check.svg) no-repeat;
+  background: url(/multiStepsForm/public/img/check.svg) no-repeat;
   background-position: center;
 }
 .form__input-wrap {
@@ -590,7 +590,7 @@ body {
   top: -35px;
   width: 24px;
   height: 24px;
-  background: url(/multiStepsForm/hgpages/img/warning.svg) no-repeat;
+  background: url(/multiStepsForm/public/img/warning.svg) no-repeat;
 }
 .pickmeup {
   background: #000;
