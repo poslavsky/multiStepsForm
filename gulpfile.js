@@ -13,8 +13,12 @@ const browserSync = require('browser-sync');
 const runSequence = require('run-sequence');
 const path = require('path');
 var replace = require('gulp-replace');
-
+// При разработке запускаю проект командой gulp dev
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+// При вызове NODE_ENV=ghpages gulp dev при сборке, 
+// пути изображений заменяться на нужные для Github pages
+// после этого пушим проект в ветку gh-pages
+// затем переключаем на мастер и там собираем через gulp dev и пушим с норм путями
 const isGHPages = process.env.NODE_ENV == 'ghpages';
 
 // Start browserSync server
@@ -86,7 +90,5 @@ gulp.task('watch', function() {
   gulp.watch('src/js/*.js', gulp.series('js'));
   gulp.watch(['src/*.html','src/img'], gulp.series('assets'));
 })
-
-
 
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));

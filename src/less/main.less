@@ -9,6 +9,15 @@
 // }
 // @c-main: var(--c-main);
 
+@main-step1: #FF6E20;
+@main-step2: #D77B00;
+@main-step3: #E93A29;
+@secondary-step1: #FFB78F;
+@secondary-step2: #EBBD80;
+@secondary-step3: #F39B93;
+@c-error: #EB5757;
+
+
 //normalize input number
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -65,17 +74,17 @@ body {
   width: 1152px;
   height: 500px;
   margin: 94px auto auto auto;
-  border: 2px solid #FF6E20;
+  border: 2px solid @main-step1;
   border-bottom-right-radius: 64px;
   border-top-left-radius: 64px;
 }
 
 .main--second {
-  border-color: #D47C01;
+  border-color: @main-step2;
   .tabs__item {
-    border-color: #D47C01;
+    border-color: @main-step2;
     &--active {
-      border-color: #D47C01;
+      border-color: @main-step2;
       border-bottom: 2px solid #fff;
     }
   }
@@ -84,40 +93,32 @@ body {
       visibility: hidden;
       opacity: 0;
       &--second {
-        background: #D47C01 url(/img/promo2.jpg) no-repeat;
+        background: @main-step2 url(/img/promo2.jpg) no-repeat;
         visibility: visible;
         opacity: 1;
       }
     }
   }
   .form__input {
-    border: 2px solid #D77B00;
+    border: 2px solid @main-step2;
     &:focus {
-      border-color: #D77B00;
+      border-color: @main-step2;
     }
     &:invalid {
-      background-color: #EBBD80;
-      border: 2px solid #EBBD80;
-    }
-    &:invalid+.form__label {
-      background-color: transparent;
+      background-color: @secondary-step2;
+      border: 2px solid @secondary-step2;
     }
     &:hover {
-      border: 2px solid #D77B00;
+      border: 2px solid @main-step2;
     }
   }
   .btn {
-    background-color: #D77B00;
+    background-color: @main-step2;
     &:hover {
-      color: #D77B00;
+      color: @main-step2;
     }
     &:active {
-      background-color: #EBBD80;
-    }
-  }
-  .form__radio {
-    &:checked+.form__radio-label:after {
-      background-color: #EBBD80;
+      background-color: @secondary-step2;
     }
   }
   .form__fieldset--first {
@@ -129,11 +130,11 @@ body {
 }
 
 .main--third {
-  border-color: #E93A29;
+  border-color: @main-step3;
   .tabs__item {
-    border-color: #E93A29;
+    border-color: @main-step3;
     &--active {
-      border-color: #E93A29;
+      border-color: @main-step3;
       border-bottom: 2px solid #fff;
     }
   }
@@ -146,40 +147,32 @@ body {
         opacity: 0;
       }
       &--third{
-        background: #E93A29 url(/img/promo3.jpg) no-repeat;
+        background: @main-step3 url(/img/promo3.jpg) no-repeat;
         visibility: visible;
         opacity: 1;
       }
     }
   }
   .form__input {
-    border: 2px solid #D77B00;
+    border: 2px solid @main-step3;
     &:focus {
-      border-color: #E93A29;
+      border-color: @main-step3;
     }
     &:invalid {
-      background-color: #F39B93;
-      border: 2px solid #F39B93;
-    }
-    &:invalid+.form__label {
-      background-color: transparent;
+      background-color: @secondary-step3;
+      border: 2px solid @secondary-step3;
     }
     &:hover {
-      border: 2px solid #E93A29;
+      border: 2px solid @main-step3;
     }
   }
   .btn {
-    background-color: #E93A29;
+    background-color: @main-step3;
     &:hover {
-      color: #E93A29;
+      color: @main-step3;
     }
     &:active {
-      background-color: #F39B93;
-    }
-  }
-  .form__radio {
-    &:checked+.form__radio-label:after {
-      background-color: #EBBD80;
+      background-color: @secondary-step3;
     }
   }
   .form__fieldset--first {
@@ -219,7 +212,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 1;
-    background: #FF6E20 url(/img/promo1.jpg) no-repeat;
+    background: @main-step1 url(/img/promo1.jpg) no-repeat;
     transition: all 0.5s ease-in;
     &--second, &--third {
       visibility: hidden;
@@ -242,12 +235,12 @@ body {
     height: 33px;
     line-height: 33px;
     text-align: center;
-    border: 1px solid #FE6E20;
+    border: 1px solid @main-step1;
     &+& {
       margin-left: 32px;
     }
     &--active {
-      border: 2px solid #FE6E20;
+      border: 2px solid @main-step1;
       border-bottom: 2px solid #fff;
     }
   }
@@ -310,6 +303,8 @@ body {
   &__input-wrap {
     position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
     &+& {
       margin-top: 32px;
     }
@@ -321,15 +316,15 @@ body {
     font-size: 16px;
     color: #333333;
     background-color: #E6DFDB;
-    border: 2px solid #FE6E20;
+    border: 2px solid @main-step1;
     
     &:focus {
       background-color: #E6DFDB;
       outline: none;
     }
     &:invalid {
-      background-color: #FFB78F;
-      border: 2px solid #FFB78F;
+      background-color: @secondary-step1;
+      border: 2px solid @secondary-step1;
     }
     &:invalid+.form__label {
       position: absolute;
@@ -344,7 +339,7 @@ body {
       display: none;
     }
     &:hover {
-      border: 2px solid #FE6E20;
+      border: 2px solid @main-step1;
     }
     &:hover+.form__label {
       font-size: 8px;
@@ -397,7 +392,7 @@ body {
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: #FFB78F;
+      background-color: @secondary-step1;
     }
   }
   &__radio-wrap {
@@ -448,10 +443,6 @@ body {
       background-position: center;
     }
   }
-  &__input-wrap {
-    display: flex;
-    align-items: center;
-  }
   &__text {
     font-weight: normal;
     line-height: normal;
@@ -470,8 +461,8 @@ body {
   width: 384px;
   height: 56px;
   text-align: center;
-  background-color: #FE6E20;
-  border: 2px solid #FE6E20;
+  background-color: @main-step1;
+  border: 2px solid @main-step1;
   color: #fff;
   line-height: 56px;
   font-weight: 900;
@@ -481,10 +472,10 @@ body {
   transition: all 0.3s ease;
   &:hover {
     background-color: #fff;
-    color: #FF6E20;
+    color: @main-step1;
   }
   &:active {
-    background-color: #F2AA83;
+    background-color: @secondary-step1;
   }
   &--arrow {
     text-align: left;
@@ -534,11 +525,11 @@ body {
 .input-error {
   position: relative;
   .form__input {
-    background-color: #E6DFDB;
-    border: 2px solid #EB5757;
+    background-color: #E6DFDB !important;
+    border: 2px solid @c-error !important;
   }
   .form__radio-label, .form__checkbox-label {
-    color: #EB5757;
+    color: @c-error;
   }
   &.form__radio-wrap, &.form__check-wrap {
     .error-message {
@@ -548,7 +539,7 @@ body {
   .error-message {
     position: absolute;
     bottom: -16px;
-    color: #EB5757;
+    color: @c-error;
     font-size: 12px;
     line-height: 1.3;
     width: 100%;
